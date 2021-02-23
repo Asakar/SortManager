@@ -11,11 +11,11 @@ public class MergeSorter implements Sorter {
         int[] leftArray = new int[leftArraySize];
         int[] rightArray = new int[rightArraySize];
 
-        for(int i = 0; i < leftArraySize; i++) {
+        for (int i = 0; i < leftArraySize; i++) {
             leftArray[i] = arr[left + i];
         }
 
-        for(int j = 0; j < rightArraySize; j++) {
+        for (int j = 0; j < rightArraySize; j++) {
             rightArray[j] = arr[middle + 1 + j];
         }
 
@@ -23,7 +23,7 @@ public class MergeSorter implements Sorter {
         int indexOfRightArray = 0;
         int indexOfArr = left;
 
-        while(indexOfLeftArray < leftArraySize && indexOfRightArray < rightArraySize) {
+        while (indexOfLeftArray < leftArraySize && indexOfRightArray < rightArraySize) {
 
             if (leftArray[indexOfLeftArray] <= rightArray[indexOfRightArray]) {
                 arr[indexOfArr] = leftArray[indexOfLeftArray];
@@ -36,7 +36,7 @@ public class MergeSorter implements Sorter {
             indexOfArr++;
         }
 
-        while(indexOfLeftArray < leftArraySize) {
+        while (indexOfLeftArray < leftArraySize) {
             arr[indexOfArr] = leftArray[indexOfLeftArray];
             indexOfLeftArray++;
             indexOfArr++;
@@ -51,7 +51,7 @@ public class MergeSorter implements Sorter {
 
 
     void sort(int arr[], int left, int right) {
-        if(left < right) {
+        if (left < right) {
             int middle = (left + right) / 2;
 
             sort(arr, left, middle);

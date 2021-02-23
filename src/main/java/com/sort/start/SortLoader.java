@@ -1,9 +1,7 @@
 package com.sort.start;
 
 import com.sort.sorters.*;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.sort.sorters.*;
 
 public class SortLoader {
 

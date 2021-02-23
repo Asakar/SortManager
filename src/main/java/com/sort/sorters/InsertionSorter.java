@@ -10,13 +10,13 @@ public class InsertionSorter implements Sorter {
 
         for(int i = 1; i < length; i++) {
             int currentMovingValue = arrayToSort[i];
-            int previuosIndex = i - 1;
+            int previousIndex = i - 1;
 
-            while(previuosIndex >= 0 && arrayToSort[previuosIndex] > currentMovingValue) {
-                arrayToSort[previuosIndex + 1] = arrayToSort[previuosIndex];
-                previuosIndex = previuosIndex - 1;
+            while(previousIndex >= 0 && arrayToSort[previousIndex] > currentMovingValue) {
+                arrayToSort[previousIndex + 1] = arrayToSort[previousIndex];
+                previousIndex = previousIndex - 1;
             }
-            arrayToSort[previuosIndex + 1] = currentMovingValue;
+            arrayToSort[previousIndex + 1] = currentMovingValue;
         }
 
         return arrayToSort;
