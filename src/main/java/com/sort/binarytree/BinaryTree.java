@@ -1,7 +1,6 @@
 package com.sort.binarytree;
 
 import com.sort.exceptions.ChildNotFoundException;
-
 import java.util.LinkedList;
 
 public class BinaryTree implements BinaryTreeInterface {
@@ -19,16 +18,13 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     private void addNodeToTree(Node node, int element) {
-
-        if(this.rootNode==null){
+        if (this.rootNode==null) {
             rootNode = new Node(element);
             numberOfElements++;
             return;
         }
-
         if (element == node.getValue()) addNodeToTree(node.getLeftChild(),element);
-
-        if(element < node.getValue()) {
+        if (element < node.getValue()) {
             if(node.isLeftChildEmpty()) {
                 node.setLeftChild(new Node(element));
                 numberOfElements++;
@@ -36,8 +32,8 @@ public class BinaryTree implements BinaryTreeInterface {
                 addNodeToTree(node.getLeftChild(),element);
             }
         }
-        else if(element > node.getValue()) {
-            if(node.isRightChildEmpty()) {
+        else if (element > node.getValue()) {
+            if (node.isRightChildEmpty()) {
                 node.setRightChild(new Node(element));
                 numberOfElements++;
             } else {
@@ -73,7 +69,7 @@ public class BinaryTree implements BinaryTreeInterface {
 
     @Override
     public void addElements(int[] elements) {
-        for(int element: elements) {
+        for (int element: elements) {
             addElement(element);
         }
     }
@@ -91,7 +87,7 @@ public class BinaryTree implements BinaryTreeInterface {
     public int getLeftChild(int element) throws ChildNotFoundException {
         Node node = findNode(element);
         Node result = node.getLeftChild();
-        if(result == null) {
+        if (result == null) {
             throw new ChildNotFoundException("Node has no left child");
         }
         return result.getValue();
@@ -109,12 +105,10 @@ public class BinaryTree implements BinaryTreeInterface {
 
     @Override
     public int[] getSortedTreeAsc() {
-
         int[] inOrder = new int[numberOfElements];
         int pos = 0;
         LinkedList<Node> treeQue = new LinkedList<>();
         Node current = this.rootNode;
-
         while(current!=null || treeQue.size()>0) {
             while(current!=null) {
                 treeQue.push(current);
@@ -134,7 +128,6 @@ public class BinaryTree implements BinaryTreeInterface {
         int pos = 0;
         LinkedList<Node> treeQue = new LinkedList<>();
         Node current = this.rootNode;
-
         while(current!=null || treeQue.size()>0) {
             while(current!=null) {
                 treeQue.push(current);

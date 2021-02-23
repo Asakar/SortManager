@@ -4,15 +4,18 @@ import com.sort.sorters.Sorter;
 import com.sort.start.SortLoader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class SortTester {
 
     private static Sorter sorter;
     private static int[] unsortedArray;
+
     @BeforeAll
     public static void setTestSetup() {
         sorter = SortLoader.getSorter("SelectionSorter");
@@ -31,6 +34,13 @@ public class SortTester {
         }
     }
 
+//    @ParameterizedTest
+//    @ValueSource(ints = {2, 4, 20, 8, 10, 30})
+//    @DisplayName("isSortedAllEvenArray")
+//    void isSortedAllEvenArray(int number) {
+//        Assertions.assertTrue( );
+//    }
+
     @Test
     public void isSortedAllEvanArray() {
         unsortedArray = new int[]{2, 4, 20, 8, 10, 30};
@@ -44,7 +54,7 @@ public class SortTester {
     public void isEmptyArray() {
         unsortedArray = new int[0];
         int[] sorterArray = sorter.sortArray(unsortedArray);
-        Assertions.assertTrue(sorterArray.length == 0);
+        Assertions.assertEquals(0, sorterArray.length);
     }
 
     @Test
@@ -91,7 +101,5 @@ public class SortTester {
             Assertions.assertTrue(sorterArray[i]<sorterArray[i+1]);
         }
     }
-
-
 
 }

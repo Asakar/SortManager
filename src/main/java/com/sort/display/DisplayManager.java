@@ -1,4 +1,4 @@
-package com.sort.Display;
+package com.sort.display;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -27,4 +27,5 @@ public class DisplayManager {
                 "\n1. Binary tree Sort" + "\n2. Bubble sort" + "\n3. Insertion Sort" + "\n4. Merge Sort" +
                 "\n5. Quick Sort" + "\n6. Selection sort");
     }
+
 }

@@ -1,7 +1,7 @@
 package com.sort.start;
 
-import com.sort.Display.DisplayManager;
-import com.sort.sorters.*;
+import com.sort.sorters.Sorter;
+import com.sort.display.DisplayManager;
 
 import java.util.Random;
 import java.util.Scanner;
